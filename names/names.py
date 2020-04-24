@@ -24,7 +24,7 @@ for name_1 in names_1:
             duplicates.append(name_1)
 """
 
-# Solution is O(n log n)
+# Solution is O(n log n):
 
 bst = BinarySearchTree(names_1[0])
 
@@ -34,6 +34,13 @@ for name_1 in names_1[1:]:
 for name_2 in names_2:
     if bst.contains(name_2):
         duplicates.append(name_2)
+
+
+# Stretch:
+
+# for name_2 in names_2:
+#     if name_2 in names_1:
+#         duplicates.append(name_2)
     
 
 end_time = time.time()
