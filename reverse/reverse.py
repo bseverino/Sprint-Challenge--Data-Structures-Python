@@ -44,7 +44,22 @@ class LinkedList:
             current = current.get_next()
         # if we've gotten here, then the target node isn't in our list
         return False
+    
+    def print(self):
+        current_node = self.head
+        print(current_node.value)
+        while current_node.next_node:
+            current_node = current_node.next_node
+            print(current_node.value)
+
 
     def reverse_list(self, node, prev):
         # You must use recursion for this solution
-        pass
+        if node is None:
+            return
+        # Once it reaches the end, sets the last node to the head
+        elif node.next_node is None:
+            self.head = node
+        # Goes back up the list setting each next_node to the prev node
+        self.reverse_list(node.next_node, node)
+        node.next_node = prev
